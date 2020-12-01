@@ -21,9 +21,6 @@
         <dependency id="Xamarin.GooglePlayServices.Maps" version="117.0.0"/>
         <dependency id="Xamarin.Forms" version="$version$"/>
       </group>
-      <group targetFramework="tizen40">
-        <dependency id="Tizen.NET" version="4.0.0"/>
-      </group>
     </dependencies>
   </metadata>
   <files>
@@ -43,21 +40,9 @@
     <file src="..\Xamarin.Forms.Maps\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Maps.dll" target="lib\Xamarin.iOS10" />
     <file src="..\build\docs\Xamarin.Forms.Maps.xml" target="lib\Xamarin.iOS10" />
 
-    <file src="..\Xamarin.Forms.Maps.UWP\bin\$Configuration$\uap10.0.14393\Xamarin.Forms.Maps.UWP.dll" target="lib\uap10.0.14393" />
-    <file src="..\Xamarin.Forms.Maps.UWP\bin\$Configuration$\uap10.0.14393\Xamarin.Forms.Maps.UWP.pri" target="lib\uap10.0.14393" />
-    <file src="..\Xamarin.Forms.Maps\bin\$Configuration$\netstandard1.0\Xamarin.Forms.Maps.dll" target="lib\uap10.0.14393" />
-
-    <file src="..\Xamarin.Forms.Maps.UWP\bin\$Configuration$\uap10.0.16299\Xamarin.Forms.Maps.UWP.dll" target="lib\uap10.0.16299" />
-    <file src="..\Xamarin.Forms.Maps.UWP\bin\$Configuration$\uap10.0.16299\Xamarin.Forms.Maps.UWP.pri" target="lib\uap10.0.16299" />
-    <file src="..\Xamarin.Forms.Maps\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Maps.dll" target="lib\uap10.0.16299" />
-
     <file src="..\Xamarin.Forms.Maps.MacOS\bin\$Configuration$\Xamarin.Forms.Maps.macOS.dll" target="lib\Xamarin.Mac" />
     <file src="..\Xamarin.Forms.Maps\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Maps.dll" target="lib\Xamarin.Mac" />
     <file src="..\build\docs\Xamarin.Forms.Maps.xml" target="lib\Xamarin.Mac" />
-
-    <file src="..\Xamarin.Forms.Maps.Tizen\bin\$Configuration$\tizen40\Xamarin.Forms.Maps.Tizen.dll" target="lib\tizen40" />
-    <file src="..\Xamarin.Forms.Maps\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Maps.dll" target="lib\tizen40" />
-    <file src="..\build\docs\Xamarin.Forms.Maps.xml" target="lib\tizen40" />
 
   </files>
 </package>
