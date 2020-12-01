@@ -651,7 +651,6 @@ Task("NuGetPack")
 
 
 Task("_NuGetPack")
-    .WithCriteria(IsRunningOnWindows())
     .Description("Create Nugets without building anything")
     .Does(() =>
     {
