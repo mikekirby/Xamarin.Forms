@@ -685,11 +685,11 @@ Task("_NuGetPack")
     });
 
 Task("Restore")
-    .Description("Restore target on Xamarin.Forms.sln")
+    .Description("Restore target on Xamarin.Forms.InSitu.sln")
     .Does(() =>
     {
         try{
-            MSBuild("./Xamarin.Forms.sln", GetMSBuildSettings().WithTarget("restore"));
+            MSBuild("./Xamarin.Forms.InSitu.sln", GetMSBuildSettings().WithTarget("restore"));
         }
         catch{
             // ignore restore errors that come from uwp
@@ -725,7 +725,7 @@ Task("BuildForNuget")
 
         msbuildSettings.BinaryLogger = binaryLogger;
         binaryLogger.FileName = $"{artifactStagingDirectory}/win-{configuration}.binlog";
-        MSBuild("./Xamarin.Forms.sln", msbuildSettings.WithRestore());
+        MSBuild("./Xamarin.Forms.InSitu.sln", msbuildSettings.WithRestore());
         
         // // This currently fails on CI will revisit later
         // if(isCIBuild)
@@ -888,7 +888,7 @@ Task("Build")
     .Does(() =>
 {
     try{
-        MSBuild("./Xamarin.Forms.sln", GetMSBuildSettings().WithRestore());
+        MSBuild("./Xamarin.Forms.InSitu.sln", GetMSBuildSettings().WithRestore());
     }
     catch(Exception)
     {
@@ -901,7 +901,7 @@ Task("Android100")
     .Description("Builds Monodroid10.0 targets")
     .Does(() =>
     {
-        MSBuild("Xamarin.Forms.sln",
+        MSBuild("Xamarin.Forms.InSitu.sln",
                 GetMSBuildSettings()
                     .WithRestore()
                     .WithProperty("AndroidTargetFrameworks", "MonoAndroid10.0"));
@@ -1108,15 +1108,15 @@ T GetBuildVariable<T>(string key, T defaultValue)
     return Argument(key, EnvironmentVariable(key, defaultValue));
 }
 
-void StartVisualStudio(string sln = "Xamarin.Forms.sln")
+void StartVisualStudio(string sln = "Xamarin.Forms.InSitu.sln")
 {
     if(isCIBuild)
         return;
 
     if(IsRunningOnWindows())
-         StartProcess("start", new ProcessSettings{ Arguments = "Xamarin.Forms.sln" });
+         StartProcess("start", new ProcessSettings{ Arguments = "Xamarin.Forms.InSitu.sln" });
     else
-         StartProcess("open", new ProcessSettings{ Arguments = "Xamarin.Forms.sln" });
+         StartProcess("open", new ProcessSettings{ Arguments = "Xamarin.Forms.InSitu.sln" });
 }
 
 MSBuildSettings GetMSBuildSettings(PlatformTarget? platformTarget = PlatformTarget.MSIL, string buildConfiguration = null)
